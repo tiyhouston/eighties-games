@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 app.engine('mustache', mustache());
 app.set("view engine", 'mustache');
+app.set("layout", 'layout');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
 mongoose.Promise = require('bluebird');

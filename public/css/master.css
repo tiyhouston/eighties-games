@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: pink;
+  font-family: 'Press Start 2P', cursive;
 }
 
 h1 {
@@ -22,6 +23,12 @@ h1 {
   margin: 1em;
   box-shadow: 10px 10px 5px #888888;
   text-align: center;
+  flex-basis: 300px;
+}
+.game img {
+  display: block;
+  padding: 1em;
+  margin: 0 auto;
 }
 
 h3 {
@@ -32,4 +39,13 @@ a.button {
   border: 1px solid blue;
   padding: 5px 10px;
   display: inline-block;
+}
+
+
+header {
+  background: #8e44ad;
+  padding: 0.25em 1em;
+}
+header a {
+  color: white;
 }

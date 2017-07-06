@@ -54,8 +54,6 @@ router.get("/games/:id/edit", function(req,res){
 
 router.post("/games/:id", function(req,res){
 
-  const years = buildYears(game.year);
-
   Game.findOne({"_id": req.params.id})
   .then( function(game){
     game.name = req.body.name;
