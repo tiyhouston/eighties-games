@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Game!</title>
+    <link rel="stylesheet" href="/css/master.css">
+
+  </head>
+  <body>
+
+    <h1>New Game!</h1>
+
+    {{#validationError}}
+      <strong>We couldn't save your game. COME ON.</strong>
+    {{/validationError}}
+
+    <form class="" action="/games" method="post">
+
+      <div class="">
+        <label for="name">Name</label>
+        <input type="text" name="name" value="{{game.name}}">
+        {{#validationError.errors.name}}
+          Game Name is like required man!
+        {{/validationError.errors.name}}
+      </div>
+
+      <div class="">
+        <label for="imageUrl">Image URL</label>
+        <input type="text" name="imageUrl" value="{{game.imageUrl}}">
+        {{#validationError.errors.imageUrl}}
+          imageUrl is like required man!
+        {{/validationError.errors.imageUrl}}
+      </div>
+
+      <div class="">
+        <label for="link">Link</label>
+        <input type="text" name="link" value="{{game.link}}">
+
+        {{#validationError.errors.link}}
+          Link is like required man!
+        {{/validationError.errors.link}}
+
+      </div>
+
+      <div class="">
+        <label for="year">Year</label>
+        <select class="" name="year">
+          <option value="">Select Year</option>
+          {{#years}}
+            <option value="{{.}}">{{.}}</option>
+          {{/years}}
+        </select>
+
+        {{#validationError.errors.year}}
+          Year is like required man!
+        {{/validationError.errors.year}}
+      </div>
+
+      <div class="">
+        <input type="submit" name="" value="Save Game">
+      </div>
+
+    </form>
+
+  </body>
+</html>

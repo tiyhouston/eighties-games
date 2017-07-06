@@ -3,10 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/css/master.css">
   </head>
   <body>
 
-    <h1>hi</h1>
+    <h1>Games!</h1>
+
+    <nav>
+      <a href="/games/new">New Game</a>
+    </nav>
+
+    <p>We found {{games.length}} game(s)</p>
+
+    <div class="games">
+      {{#games}}
+        <div class="game">
+          <a href="{{link}}">
+            <h3>{{name}}</h3>
+            <img src="{{imageUrl}}" alt="{{name}} image - {{year}}">
+          </a>
+          <strong>{{year}}</strong>
+          <a href="/games/{{_id}}/edit">Edit</a>
+        </div>
+      {{/games}}
+  </div>
 
   </body>
 </html>
