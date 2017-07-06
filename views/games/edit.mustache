@@ -11,36 +11,7 @@
     <h1>Edit that Game!</h1>
 
     <form class="" action="/games/{{game._id}}" method="post">
-
-      <div class="">
-        <label for="name">Name</label>
-        <input type="text" name="name" value="{{game.name}}">
-      </div>
-
-      <div class="">
-        <label for="imageUrl">Image URL</label>
-        <input type="text" name="imageUrl" value="{{game.imageUrl}}">
-      </div>
-
-      <div class="">
-        <label for="link">Link</label>
-        <input type="text" name="link" value="{{game.link}}">
-      </div>
-
-      <div class="">
-        <label for="year">Year -- current: {{game.year}}</label>
-        <select class="" name="year">
-          <option value="">Select Year</option>
-          {{#years}}
-            <option value="{{.}}">{{.}}</option>
-          {{/years}}
-        </select>
-      </div>
-
-      <div class="">
-        <input type="submit" name="" value="Update Game">
-      </div>
-
+      {{>games/_form}}
     </form>
 
   </body>

@@ -1,14 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const Game = require("../models/Game");
-const years = [];
-for(let i=1980; i<1990; i++){
-  years.push(i);
+
+function buildYears(currentlySelectedYear){
+  const years = [];
+  for(let i=1980; i<1990; i++){
+    const yearObject = {
+      year: i,
+      selected: (i === currentlySelectedYear)
+    }
+    years.push(yearObject)
+  }
+  return years;
 }
+
 
 router.get("/games/new", function(req, res){
   res.render("games/new", {
-    years: years
+    years: buildYears()
   })
 })
 
@@ -27,7 +36,7 @@ router.post("/games", function(req, res){
     res.render("games/new", {
       game: game,
       validationError: validationError,
-      years: years
+      years: buildYears(game.year)
     })
   })
 })
@@ -38,12 +47,14 @@ router.get("/games/:id/edit", function(req,res){
   .then(function(game){
     res.render("games/edit", {
       game: game,
-      years: years
+      years: buildYears(game.year)
     })
   })
 })
 
 router.post("/games/:id", function(req,res){
+
+  const years = buildYears(game.year);
 
   Game.findOne({"_id": req.params.id})
   .then( function(game){
@@ -55,6 +66,14 @@ router.post("/games/:id", function(req,res){
     .then( function(game){
       res.redirect("/")
     })
+    .catch( function(validationError){
+      res.render("games/edit", {
+        game: game,
+        validationError: validationError,
+        years: buildYears(game.year)
+      })
+    })
+
   })
 })
 
