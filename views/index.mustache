@@ -1,8 +1,21 @@
 <h1>Games!</h1>
 
+<div class="search">
+  <form class="" action="/" method="get">
+    <input type="text" name="name" value="{{searchName}}" placeholder="Search for Games">
+
+    <input type="number" name="year" value="{{searchYear}}" placeholder="Specify Year">
+
+    <input type="submit" name="" value="Search!">
+
+  </form>
+</div>
 
 <nav>
   <a href="/games/new">New Game</a>
+
+  Games in: <a href="/?year=1982">1982</a>
+
 </nav>
 
 <p>We found {{games.length}} game(s)</p>
