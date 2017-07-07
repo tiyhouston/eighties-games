@@ -11,6 +11,7 @@ app.engine('mustache', mustache());
 app.set("view engine", 'mustache');
 app.set("layout", 'layout');
 app.use(express.static("public"));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/eighties');
