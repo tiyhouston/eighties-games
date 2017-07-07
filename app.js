@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const homepageRoutes = require("./routes/homepage");
 const gamesRoutes = require("./routes/games");
+const apiRoutes = require("./routes/api");
 const mongoose = require('mongoose');
 
 app.engine('mustache', mustache());
@@ -16,6 +17,7 @@ mongoose.connect('mongodb://localhost:27017/eighties');
 
 app.use(homepageRoutes);
 app.use(gamesRoutes);
+app.use(apiRoutes);
 
 app.listen(3000, function(){
   console.log("hi")
