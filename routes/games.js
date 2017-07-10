@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Game = require("../models/Game");
+const authMiddleware = require("../middleware/auth");
 
 function buildYears(currentlySelectedYear){
   const years = [];
@@ -14,14 +15,13 @@ function buildYears(currentlySelectedYear){
   return years;
 }
 
-
-router.get("/games/new", function(req, res){
+router.get("/games/new", authMiddleware, function(req, res){
   res.render("games/new", {
     years: buildYears()
   })
 })
 
-router.post("/games", function(req, res){
+router.post("/games", authMiddleware, function(req, res){
 
   const game = new Game()
   game.name = req.body.name;
@@ -41,7 +41,7 @@ router.post("/games", function(req, res){
   })
 })
 
-router.get("/games/:id/edit", function(req,res){
+router.get("/games/:id/edit", authMiddleware, function(req,res){
 
   Game.findOne({"_id": req.params.id})
   .then(function(game){
@@ -52,7 +52,7 @@ router.get("/games/:id/edit", function(req,res){
   })
 })
 
-router.post("/games/:id", function(req,res){
+router.post("/games/:id", authMiddleware, function(req,res){
 
   Game.findOne({"_id": req.params.id})
   .then( function(game){

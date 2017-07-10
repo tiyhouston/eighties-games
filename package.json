@@ -12,7 +12,9 @@
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "express-session": "^1.15.3",
     "mongoose": "^4.10.8",
-    "mustache-express": "^1.2.5"
+    "mustache-express": "^1.2.5",
+    "rand-token": "^0.3.0"
   }
 }

@@ -4,10 +4,14 @@ body {
   background: pink;
   font-family: 'Press Start 2P', cursive;
 }
-
+.wrapper {
+  padding: 1em;
+}
 h1 {
   text-align: center;
   border-bottom: 1px solid #666666;
+  padding: 0.25em;
+  margin-bottom: 1.5em;
 }
 
 .games {
@@ -44,8 +48,70 @@ a.button {
 
 header {
   background: #8e44ad;
-  padding: 0.25em 1em;
+  padding: 1em 2em;
+}
+footer {
+  text-align: center;
+  margin-top: 3em;
+  padding-top: 2em;
+  border-top: 1px solid #8e44ad;
 }
 header a {
   color: white;
+}
+
+button, input[type='submit']{
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: #8e44ad;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+}
+button, input[type='submit']{
+  background: #8e44ad;
+}
+
+form {
+  margin: 1em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"]{
+  padding: 10px 20px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  outline: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #FF6F00;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+label {
+  margin-bottom: 20px;
+  display: block;
+  font-size: 18px;
+  color: #666;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  cursor: pointer;
+}
+label:first-child {
+  margin-bottom: 0;
+  border-bottom: none;
 }
