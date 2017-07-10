@@ -23,3 +23,5 @@ app.use(apiRoutes);
 app.listen(3000, function(){
   console.log("hi")
 })
+
+module.exports = app;
