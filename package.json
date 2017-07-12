@@ -16,6 +16,8 @@
     "mocha": "^3.4.2",
     "mongoose": "^4.10.8",
     "mustache-express": "^1.2.5",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "express-session": "^1.15.3",
+    "rand-token": "^0.3.0"
   }
 }

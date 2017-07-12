@@ -1,6 +1,6 @@
 <h1>Games!</h1>
 
-<div class="search">
+<div class="search pure-form">
   <form class="" action="/" method="get">
     <input type="text" name="name" value="{{searchName}}" placeholder="Search for Games">
 
@@ -11,23 +11,17 @@
   </form>
 </div>
 
-<nav>
-  <a href="/games/new">New Game</a>
-
-  Games in: <a href="/?year=1982">1982</a>
-
-</nav>
-
 <p class="games-found"></p>
 
 <div class="games">
 </div>
 
+<h1>Create a New Game!</h1>
 <form class="live-submit" action="" method="">
   <input type="text" id="game-name" name="name" value="" placeholder="name">
   <input type="number" id="game-year" name="year" value="" placeholder="year">
   <input type="text" id="game-imageUrl" name="imageUrl" value="" placeholder="imageUrl">
-  <input type="link" id="game-link" name="link" value="" placeholder="link">
+  <input type="text" id="game-link" name="link" value="" placeholder="link">
 
   <input type="submit" name="" value="Save that game!">
 </form>

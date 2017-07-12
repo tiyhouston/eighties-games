@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Game = require("../models/Game");
+const apiAuthMiddleware = require("../middleware/apiAuth");
 
-router.get("/api/games", function(req, res){
+router.get("/api/games",apiAuthMiddleware, function(req, res){
   const queryObject = {};
   if (req.query.name){
     // queryObject.name = req.query.name;
@@ -15,7 +16,6 @@ router.get("/api/games", function(req, res){
     queryObject.year = req.query.year;
   }
 
-  console.log("queryObject", queryObject)
 
   Game.find(queryObject)
   .sort("year")
@@ -32,9 +32,7 @@ router.get("/api/games/:id", function(req, res){
 })
 
 
-router.post("/api/games", function(req, res){
-
-  console.log("req.body", req.body)
+router.post("/api/games", apiAuthMiddleware, function(req, res){
 
   const game = new Game()
   game.name = req.body.name;
